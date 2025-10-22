@@ -1,1 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Red avanzada de científicos XIX</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Red de científicos británicos del siglo XIX</h1>
+  </header>
+
+  <main>
+    <section id="left">
+      <svg id="graph"></svg>
+    </section>
+
+    <section id="right">
+      <form id="chatForm">
+        <div class="row">
+          <select id="nodeA" required></select>
+          <select id="nodeB" required></select>
+        </div>
+        <input id="question" type="text" placeholder="Ej.: ¿Cómo se relacionan en la Royal Institution?" />
+        <div class="row">
+          <button type="submit">Preguntar</button>
+          <button type="button" id="clear">Limpiar conversación</button>
+        </div>
+      </form>
+
+      <div id="chatLog">
+        <div class="msg">Selecciona dos científicos y formula una pregunta sobre su vínculo.</div>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
 
