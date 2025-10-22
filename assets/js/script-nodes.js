@@ -286,3 +286,4 @@ document.getElementById('clear').addEventListener('click',()=>{
   appendMsg('Selecciona dos científicos y formula una pregunta sobre su vínculo para obtener una explicación basada en los datos.');
 });
 
+
