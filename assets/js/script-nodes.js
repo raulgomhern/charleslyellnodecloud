@@ -183,13 +183,13 @@ const simulation = d3.forceSimulation(nodes)
 // Zoom
 svg.call(d3.zoom().scaleExtent([0.3, 3]).on('zoom', (event)=> g.attr('transform', event.transform)));
 
-// ----- Aristas curvas -----
-const link = g.selectAll('path')
+// ----- Aristas (Líneas rectas) -----
+const link = g.selectAll('line')
   .data(links)
-  .join('path')
-  .attr('stroke', d=>'#6e7291')
-  .attr('stroke-width', 1.5)
-  .attr('fill', 'none');
+  .join('line')
+  .attr('stroke', '#6e7291') // Color fijo
+  .attr('stroke-opacity', 0.6) // Opacidad para que no saturen
+  .attr('stroke-width', 1.5);
 
 // ----- Nodos -----
 const nodeGroup = g.selectAll('g.node')
@@ -222,16 +222,16 @@ nodeGroup.append('text')
   .attr('dy',4)
   .text(d=>d.label);
 
-// ----- Actualizar posiciones -----
+// Código CORREGIDO (usa x1, y1, x2, y2 para líneas rectas):
 simulation.on('tick', ()=>{
-  link.attr('d', d => {
-    const dx = d.target.x - d.source.x;
-    const dy = d.target.y - d.source.y;
-    const dr = Math.sqrt(dx*dx + dy*dy)*1.5;
-    return `M${d.source.x},${d.source.y}A${dr},${dr} 0 0,1 ${d.target.x},${d.target.y}`;
-  });
+  // Actualizar la posición de los enlaces usando coordenadas de línea
+  link.attr('x1', d => d.source.x)
+      .attr('y1', d => d.source.y)
+      .attr('x2', d => d.target.x)
+      .attr('y2', d => d.target.y);
 
-  nodeGroup.attr('transform', d=>`translate(${d.x},${d.y})`);
+  // El código de los nodos se mantiene igual
+  nodeGroup.attr('transform', d=>`translate(${d.x},${d.y})`);
 });
 
 // ----- Chat -----
