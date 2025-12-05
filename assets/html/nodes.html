@@ -1,42 +1,47 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Red avanzada de científicos XIX</title>
-  <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/raulgomhern/charleslyellnodecloud/refs/heads/main/assets/img/fossil.png">
-  <link rel="stylesheet" href=".././css/styles-nodes.css">
-  <script src="https://d3js.org/d3.v7.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Red avanzada de científicos XIX</title>
+    <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/raulgomhern/charleslyellnodecloud/refs/heads/main/assets/img/fossil.png">
+    <link rel="stylesheet" href=".././css/styles-nodes.css">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
 </head>
 <body>
-  <header>
-    <h1>Red de científicos británicos del siglo XIX</h1>
-  </header>
+    <header>
+        <h1>Red de Conexiones de Lyell</h1>
+    </header>
 
-  <main>
-    <section id="left">
-      <svg id="graph"></svg>
-    </section>
+    <main>
+        <section id="left">
+            <svg id="graph"></svg>
+        </section>
 
-    <section id="right">
-      <form id="chatForm">
-        <div class="row">
-          <select id="nodeA" required></select>
-          <select id="nodeB" required></select>
-        </div>
-        <input id="question" type="text" placeholder="Ej.: ¿Cómo se relacionan en la Royal Institution?" />
-        <div class="row">
-          <button type="submit">Preguntar</button>
-          <button type="button" id="clear">Limpiar conversación</button>
-        </div>
-      </form>
+        <section id="right">
+            <form id="chatForm">
+                <div class="row">
+                    <label for="nodeA_fixed">Nodo A (Fijo):</label>
+                    <span id="fixedNodeA" class="fixed-label">Charles Lyell</span>
+                </div>
 
-      <div id="chatLog">
-        <div class="msg">Selecciona dos científicos y formula una pregunta sobre su vínculo.</div>
-      </div>
-    </section>
-  </main>
+                <div class="row">
+                    <label for="nodeB">Selecciona colega:</label>
+                    <select id="nodeB" required></select>
+                </div>
+                
+                <div class="row">
+                    <button type="submit">Preguntar Relación</button>
+                    <button type="button" id="clear">Limpiar conversación</button>
+                </div>
+            </form>
 
-  <script src=".././js/script-nodes.js"></script>
+            <div id="chatLog">
+                <div class="msg">Selecciona un colega y pulsa "Preguntar Relación" para ver el vínculo con Charles Lyell.</div>
+            </div>
+        </section>
+    </main>
+
+    <script src=".././js/script-nodes.js"></script>
 </body>
 </html>
