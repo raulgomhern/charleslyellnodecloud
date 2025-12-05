@@ -261,7 +261,7 @@ function findSecondaryLinks(nodeId) {
         .filter(id => {
             const meta = nodeMeta(id);
             // Include Topics (type) or fixed Institutions (ids)
-            return meta && (meta.type === 'topic' || ['BMNH', 'Kew', 'UoE_Lyell'].includes(id));
+            return meta && (meta.type === 'topic');
         })
         .map(id => nodeMeta(id).label);
     return secondaryLinks;
