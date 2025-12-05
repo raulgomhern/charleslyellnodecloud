@@ -33,8 +33,8 @@ button { padding: 6px 10px; background: #c2864d; border: none; border-radius: 6p
   gap: 4px;
   border-top: 1px solid #232743;
   padding-top: 6px;
-    /* Asegura que el contenido nunca obligue al contenedor a desbordarse horizontalmente */
-    overflow-x: hidden; 
+  /* 🛠️ Añadido para eliminar la barra horizontal */
+  overflow-x: hidden; 
 }
 
 .msg {
@@ -43,10 +43,9 @@ button { padding: 6px 10px; background: #c2864d; border: none; border-radius: 6p
   padding: 8px;
   border-radius: 8px;
   font-size: 13px;
-    /* --- AJUSTES CLAVE PARA EL WRAP --- */
-    white-space: normal; /* Asegura que el texto fluya y se ajuste */
-    word-break: break-word; /* Rompe palabras largas que excedan el ancho */
-    /* --------------------------------- */
+  /* 🛠️ Añadido para forzar el ajuste de línea */
+  white-space: normal; 
+  word-break: break-word;
 }
 
 .user {
