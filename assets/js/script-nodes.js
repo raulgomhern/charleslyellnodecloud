@@ -236,7 +236,7 @@ function findEdge(a,b){ return EDGES.find(e=>(e.source===a&&e.target===b)||(e.so
 
 // FUNCIÓN MODIFICADA: Llenar el selector B
 function populateSelects(){
-    selectB.innerHTML='<option value="">Selecciona colega...</option>';
+    selectB.innerHTML='<option value="">Select a person</option>';
     
     // Filtrar solo personas y excluir a Lyell
     const peopleNodes = NODES.filter(n => n.id !== LYELL_ID && !n.tipo);
