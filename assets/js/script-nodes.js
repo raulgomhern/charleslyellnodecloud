@@ -236,7 +236,7 @@ function findEdge(a,b){ return EDGES.find(e=>(e.source===a&&e.target===b)||(e.so
 
 // Populate Select B
 function populateSelects(){
-    selectB.innerHTML='<option value="">Select colleague...</option>';
+    selectB.innerHTML='<option value="">Select a person...</option>';
     
     const peopleNodes = NODES.filter(n => n.id !== LYELL_ID && !n.type);
 
@@ -349,7 +349,7 @@ document.getElementById('chatForm').addEventListener('submit',e=>{
   const b=selectB.value;
   
   if(!b) {
-    return appendMsg('Please select a colleague from the menu on the right.');
+    return appendMsg('Please select a person from the menu on the right.');
   }
     
   // *** AUTO-CLEAR PREVIOUS RESULT ***
@@ -363,5 +363,5 @@ document.getElementById('chatForm').addEventListener('submit',e=>{
 // Clear button handler
 document.getElementById('clear').addEventListener('click',()=>{
   chatLog.innerHTML='';
-  appendMsg('Select a colleague and press "Query Relationship" to see the bond with Charles Lyell.');
+  appendMsg('Select a person and press "Query Relationship" to see the bond with Charles Lyell.');
 });
