@@ -1,4 +1,4 @@
-// ----- Nodes (Updated with English labels and detailed explanations) -----
+// ----- Nodes (Institutions Removed) -----
 const NODES = [
   // Central Figure
   { id: "Lyell", label: "Charles Lyell", field: "Geology", city: "London/Edinburgh" },
@@ -12,7 +12,6 @@ const NODES = [
   { id: "JohnMurray", label: "John Murray (editor)", field: "Publishing", city: "London", lyell_link: "Commercial bond: His principal editor, responsible for the diffusion of his works." },
 
   // Key Scientists
-  // Updated link explanation based on user's final desired text
   { id: "Darwin", label: "Charles Darwin", field: "Natural History", city: "Down, London", lyell_link: "Friend, colleague, and key influence in Lyell's life. Lyell addressed Darwin's theory in his work." },
   { id: "Wallace", label: "Alfred R. Wallace", field: "Natural History", city: "London", lyell_link: "Scientific colleague: Peer in natural history, also active in London." },
   { id: "Hooker", label: "J. D. Hooker", field: "Botany", city: "Kew/London", lyell_link: "Scientific bond: Friend of Darwin and Lyell, Director of Kew Gardens." },
@@ -20,7 +19,7 @@ const NODES = [
   { id: "Lubbock", label: "John Lubbock", field: "Prehistory/Archaeology", city: "London", lyell_link: "Scientific bond: Friend and archaeologist, sharing a base in London." },
 
   // Extended Network
-  { id: "Argyll", label: "Duke of Argyll", field: "Naturalist/Politics", city: "UK", lyell_link: "Social/scientific bond: Naturalist and political figure with whom he corresponded." },
+  { id: "Argyll", label: "Duke of Argyll", field: "Naturalist/Politics", city: "UK", lyell_link: "Social/scientific bond: Naturalista and political figure with whom he corresponded." },
   { id: "Bates", label: "Henry W. Bates", field: "Biogeography/Entomology", city: "Amazonia/London", lyell_link: "Scientific bond: Colleague in biogeography/entomology, sharing a base city." },
   { id: "Prestwich", label: "Joseph Prestwich", field: "Geology", city: "UK/France", lyell_link: "Strong scientific bond: They share the field of Geology. Prestwich validated the Paleolithic finds Lyell promoted." },
   { id: "Boucher", label: "Boucher de Perthes", field: "Prehistory", city: "Abbeville", lyell_link: "Scientific bond: Key antiquarian in the evidence for the Paleolithic; Lyell validated his findings." },
@@ -48,7 +47,7 @@ const NODES = [
   { id: "Redfield", label: "W. C. Redfield", field: "Meteorology", city: "USA", lyell_link: "Scientific bond: American meteorologist, Lyell corresponded with him on climatic phenomena." },
   { id: "Somerville", label: "Mary Somerville", field: "Science/Mathematics", city: "Italy/London", lyell_link: "Social/scientific bond: Influential scientist and writer, sharing a base in London." },
 
-  // Institutions and Topics (hubs)
+  // Topics (hubs) - Institutions are now gone
   { id: "SelNatural", label: "Theory of Natural Selection", type: "topic" },
   { id: "Mimetismo", label: "Biological Mimicry", type: "topic" },
   { id: "Paleolitico", label: "European Paleolithic (Somme, Engis, Neanderthal)", type: "topic" },
@@ -62,9 +61,8 @@ const NODES = [
   { id: "BotanicaFosil", label: "Paleobotany and Paleoclimate", type: "topic" }
 ];
 
-// ----- Edges (Translated types only for consistency, structure remains) -----
+// ----- Edges (Institutions related edges removed) -----
 const EDGES = [
-  // ... (All edges remain the same, only 'tipo' is conceptually translated)
   { source: "MaryLyell", target: "Lyell", tipo: "family-correspondence" },
   { source: "CarolineLyell", target: "Lyell", tipo: "family-correspondence" },
   { source: "LeonardHorner", target: "Lyell", tipo: "correspondence" },
@@ -129,14 +127,10 @@ const EDGES = [
   { source: "Binney", target: "Carbonifero", tipo: "Calamites/flora" },
   { source: "Hooker", target: "BotanicaFosil", tipo: "biogeography/chronologies" },
   { source: "LeonardHorner", target: "NileMud", tipo: "chronologies (Nile)" },
-  { source: "Owen", target: "BMNH", tipo: "institution" },
-  { source: "Hooker", target: "Kew", tipo: "institution" },
-  { source: "Lyell", target: "UoE_Lyell", tipo: "archive" },
-  { source: "JohnMurray", target: "UoE_Lyell", tipo: "documented-in-funds" }
 ];
 
 
-// ----- D3.js and Graph Logic (Required for node lookups) -----
+// ----- D3.js and Graph Logic (Unchanged) -----
 
 const extraNodes = [];
 const extraEdges = [];
@@ -153,7 +147,7 @@ const links = EDGES.concat(extraEdges);
 
 // D3 Setup (Size variables are placeholder if run outside browser)
 const svg = d3.select('#graph');
-const width = svg.node() ? svg.node().clientWidth : 600; 
+const width = svg.node() ? svg.node().clientWidth : 600; 
 const height = svg.node() ? svg.node().clientHeight : 400;
 
 const g = svg.append('g');
@@ -225,7 +219,7 @@ const selectB = document.getElementById('nodeB');
 const chatLog = document.getElementById('chatLog');
 
 // Lyell is the fixed Node A
-const LYELL_ID = "Lyell"; 
+const LYELL_ID = "Lyell"; 
 
 // Metadata Lookup Functions
 function nodeMeta(id){ return nodes.find(n=>n.id===id); }
@@ -233,126 +227,126 @@ function findEdge(a,b){ return EDGES.find(e=>(e.source===a&&e.target===b)||(e.so
 
 // Populate Select B
 function populateSelects(){
-    selectB.innerHTML='<option value="">Select a person...</option>';
-    
-    const peopleNodes = NODES.filter(n => n.id !== LYELL_ID && !n.type);
+    selectB.innerHTML='<option value="">Select a person...</option>';
+    
+    const peopleNodes = NODES.filter(n => n.id !== LYELL_ID && !n.type);
 
-    peopleNodes
-        .sort((a, b) => a.label.localeCompare(b.label))
-        .forEach(n=>{
-            const opt=document.createElement('option'); 
-            opt.value=n.id; 
-            opt.textContent=n.label; 
-            selectB.appendChild(opt);
-        });
+    peopleNodes
+        .sort((a, b) => a.label.localeCompare(b.label))
+        .forEach(n=>{
+            const opt=document.createElement('option'); 
+            opt.value=n.id; 
+            opt.textContent=n.label; 
+            selectB.appendChild(opt);
+        });
 }
 populateSelects();
 
 // Graph Click Handler
 nodeGroup.on('click',(event,d)=>{
-    if(d.type!=='person' || d.id === LYELL_ID) return;
-    selectB.value=d.id;
+    if(d.type!=='person' || d.id === LYELL_ID) return;
+    selectB.value=d.id;
 });
 
-// Support Function: Finds connected topics/institutions for node X
+// Support Function: Finds connected topics for node X (No institutional IDs needed now)
 function findSecondaryLinks(nodeId) {
-    const secondaryLinks = EDGES.filter(e => e.source === nodeId || e.target === nodeId)
-        .map(e => e.source === nodeId ? e.target : e.source)
-        .filter(id => {
-            const meta = nodeMeta(id);
-            // Include Topics (type) or fixed Institutions (ids)
-            return meta && (meta.type === 'topic' || ['BMNH', 'Kew', 'UoE_Lyell'].includes(id));
-        })
-        .map(id => nodeMeta(id).label);
-    return secondaryLinks;
+    const secondaryLinks = EDGES.filter(e => e.source === nodeId || e.target === nodeId)
+        .map(e => e.source === nodeId ? e.target : e.source)
+        .filter(id => {
+            const meta = nodeMeta(id);
+            // Only include Topics (type === 'topic')
+            return meta && (meta.type === 'topic');
+        })
+        .map(id => nodeMeta(id).label);
+    return secondaryLinks;
 }
 
 
 // MAIN FUNCTION: Generates the structured response
 function explainConnection(a, b) {
-    const A = nodeMeta(a); // Lyell
-    const B = nodeMeta(b); // Selected Colleague
+    const A = nodeMeta(a); // Lyell
+    const B = nodeMeta(b); // Selected Colleague
 
-    if (!A || !B) return 'Invalid node.';
+    if (!A || !B) return 'Invalid node.';
 
-    // 1. Get the detailed explanation
-    const specificExplanation = B.lyell_link || 'The relationship is based only on shared interests or locations.';
-    
+    // 1. Get the detailed explanation
+    const specificExplanation = B.lyell_link || 'The relationship is based only on shared interests or locations.';
+    
 
-    // 2. Common Attributes (Field/City)
-    let locationText = '';
-    const lyellCity = A.city || '';
-    const B_city = B.city || 'Undefined City';
-    const sharedCity = lyellCity.includes(B_city) || B_city.includes(lyellCity);
-    const hasCommonField = A.field === B.field && A.field;
+    // 2. Common Attributes (Field/City)
+    let locationText = '';
+    const lyellCity = A.city || '';
+    const B_city = B.city || 'Undefined City';
+    const sharedCity = lyellCity.includes(B_city) || B_city.includes(lyellCity);
+    const hasCommonField = A.field === B.field && A.field;
 
-    if (hasCommonField) {
-        locationText += `Shared field of study: **${A.field}**`;
-    }
-    if (sharedCity) {
-        if (locationText) locationText += '\n'; 
-        locationText += `Both were based in: **${B_city}**`;
-    } else if (B_city !== 'Undefined City') {
-        locationText = `${B.label} was based in: **${B_city}**`;
-    }
-    
-    if (!locationText) {
-        locationText = 'No shared location or field attributes found.';
-    }
+    if (hasCommonField) {
+        locationText += `Shared field of study: **${A.field}**`;
+    }
+    if (sharedCity) {
+        if (locationText) locationText += '\n'; 
+        locationText += `Both were based in: **${B_city}**`;
+    } else if (B_city !== 'Undefined City') {
+        locationText = `${B.label} was based in: **${B_city}**`;
+    }
+    
+    if (!locationText) {
+        locationText = 'No shared location or field attributes found.';
+    }
 
 
-    // 3. Secondary Links (Topics/Institutions)
-    const secondaryLinks = findSecondaryLinks(b);
-    let secondaryText = '';
-    if (secondaryLinks.length > 0) {
-        secondaryText = `Directly related to: **${secondaryLinks.join('**, **')}**`;
-    } else {
-        secondaryText = `Not directly related to other topics or institutions in this network.`;
-    }
+    // 3. Secondary Links (Topics/Institutions)
+    const secondaryLinks = findSecondaryLinks(b);
+    let secondaryText = '';
+    if (secondaryLinks.length > 0) {
+        secondaryText = `Directly related to: **${secondaryLinks.join('**, **')}**`;
+    } else {
+        secondaryText = `Not directly related to other topics or institutions in this network.`;
+    }
 
-    // CONSTRUCTING THE FINAL RESPONSE
-    let response = `Relationship between Charles Lyell and ${B.label}\n\n`;
-    
-    // 1. City/Field (Parentheses removed)
-    response += `- ${locationText}\n`;
-    
-    // 2. Link/Explanation (Parentheses removed)
-    response += `- Link: ${specificExplanation}\n`;
-    
-    // 3. Topics/Institutions (Parentheses removed)
-    response += `- ${secondaryText}\n`;
+    // CONSTRUCTING THE FINAL RESPONSE
+    let response = `Relationship between Charles Lyell and ${B.label}\n\n`;
+    
+    // 1. City/Field (Parentheses removed)
+    response += `- ${locationText}\n`;
+    
+    // 2. Link/Explanation (Parentheses removed)
+    response += `- Link: ${specificExplanation}\n`;
+    
+    // 3. Topics/Institutions (Parentheses removed)
+    response += `- ${secondaryText}\n`;
 
-    return response;
+    return response;
 }
 
 // Function to append messages (using <div> for wrapping, removing <pre>)
 function appendMsg(text,who='bot'){
-  const div=document.createElement('div'); 
-  // IMPORTANT: Using `msg user` or `msg` class and <div> allows text to wrap.
-  div.className='msg'+(who==='user'?' user':''); 
-  
-  // Replace double asterisks with <strong> for bolding and maintain line breaks
-  div.innerHTML = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/\n/g, '<br>');
+  const div=document.createElement('div'); 
+  // IMPORTANT: Using `msg user` or `msg` class and <div> allows text to wrap.
+  div.className='msg'+(who==='user'?' user':''); 
+  
+  // Replace double asterisks with <strong> for bolding and maintain line breaks
+  div.innerHTML = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/\n/g, '<br>');
 
-  chatLog.appendChild(div); 
-  chatLog.scrollTop=chatLog.scrollHeight;
+  chatLog.appendChild(div); 
+  chatLog.scrollTop=chatLog.scrollHeight;
 }
 
 // FORM SUBMISSION HANDLER
 document.getElementById('chatForm').addEventListener('submit',e=>{
   e.preventDefault();
-  
+  
   const a=LYELL_ID;
   const b=selectB.value;
-  
+  
   if(!b) {
     return appendMsg('Please select a person from the menu on the right.');
   }
-    
-  // *** AUTO-CLEAR PREVIOUS RESULT ***
-  chatLog.innerHTML = ''; 
-    
-  appendMsg(`Query regarding the relationship between Charles Lyell and ${nodeMeta(b).label}.`,'user');
+    
+  // *** AUTO-CLEAR PREVIOUS RESULT ***
+  chatLog.innerHTML = ''; 
+    
+  appendMsg(`Query regarding the relationship between Charles Lyell and ${nodeMeta(b).label}.`,'user');
 
   appendMsg(explainConnection(a,b),'bot');
 });
