@@ -1,58 +1,57 @@
-// ----- Nodos -----
+// ----- Nodos (Actualizados con 'lyell_vínculo' y descripciones literales) -----
 const NODES = [
   // Persona central
   { id: "Lyell", label: "Charles Lyell", campo: "Geología", ciudad: "Londres/Edimburgo" },
 
   // Familia Lyell-Horner y editores
-  { id: "MaryLyell", label: "Mary Lyell (Horner)", campo: "Conchología/biología", ciudad: "Londres/Edimburgo" },
-  { id: "LeonardHorner", label: "Leonard Horner", campo: "Geología/educación", ciudad: "Londres" },
-  { id: "FrancisHorner", label: "Francis Horner", campo: "Economía/política", ciudad: "Londres" },
-  { id: "KatharineMurrayLyell", label: "Katharine M. Lyell", campo: "Botánica/edición científica", ciudad: "Londres", extra:"Editora de Life and Letters" },
-  { id: "CarolineLyell", label: "Caroline Lyell", campo: "Correspondencia familiar", ciudad: "Reino Unido" },
-  { id: "JohnMurray", label: "John Murray (editor)", campo: "Editorial", ciudad: "Londres" },
+  { id: "MaryLyell", label: "Mary Lyell (Horner)", campo: "Conchología/biología", ciudad: "Londres/Edimburgo", lyell_vínculo: "Vínculo íntimo: Esposa y colaboradora en investigación, con lazos familiares y una base en común." },
+  { id: "LeonardHorner", label: "Leonard Horner", campo: "Geología/educación", ciudad: "Londres", lyell_vínculo: "Vínculo familiar y profesional: Padre de Mary Lyell y colega geólogo." },
+  { id: "FrancisHorner", label: "Francis Horner", campo: "Economía/política", ciudad: "Londres", lyell_vínculo: "Vínculo familiar: Cuñado de Lyell, comparten base en Londres." },
+  { id: "KatharineMurrayLyell", label: "Katharine M. Lyell", campo: "Botánica/edición científica", ciudad: "Londres", extra:"Editora de Life and Letters", lyell_vínculo: "Vínculo profesional/familiar: Sobrina y editora de sus memorias y correspondencia." },
+  { id: "CarolineLyell", label: "Caroline Lyell", campo: "Correspondencia familiar", ciudad: "Reino Unido", lyell_vínculo: "Vínculo familiar: Tienen lazo familiar y mantienen correspondencia." },
+  { id: "JohnMurray", label: "John Murray (editor)", campo: "Editorial", ciudad: "Londres", lyell_vínculo: "Vínculo comercial: Su editor de cabecera, responsable de la difusión de sus obras." },
 
   // Científicos clave
-  { id: "Darwin", label: "Charles Darwin", campo: "Historia natural", ciudad: "Down, Londres" },
-  { id: "Wallace", label: "Alfred R. Wallace", campo: "Historia natural", ciudad: "Londres" },
-  { id: "Hooker", label: "J. D. Hooker", campo: "Botánica", ciudad: "Kew/Londres" },
-  { id: "Owen", label: "Richard Owen", campo: "Anatomía/paleontología", ciudad: "Londres (BMNH)" },
-  { id: "Lubbock", label: "John Lubbock", campo: "Prehistoria/arqueología", ciudad: "Londres" },
+  // *** ACTUALIZACIÓN PARA COINCIDIR CON EL EJEMPLO DEL USUARIO: ***
+  { id: "Darwin", label: "Charles Darwin", campo: "Historia natural", ciudad: "Down, Londres", lyell_vínculo: "Amigo, colega e influencia clave en la vida de Lyell. Lyell abordó la teoría de Darwin en su obra." },
+  { id: "Wallace", label: "Alfred R. Wallace", campo: "Historia natural", ciudad: "Londres", lyell_vínculo: "Vínculo científico: Colega en la historia natural, también activo en Londres." },
+  { id: "Hooker", label: "J. D. Hooker", campo: "Botánica", ciudad: "Kew/Londres", lyell_vínculo: "Vínculo científico: Amigo de Darwin y Lyell, director de Kew." },
+  { id: "Owen", label: "Richard Owen", campo: "Anatomía/paleontología", ciudad: "Londres (BMNH)", lyell_vínculo: "Vínculo científico/institucional: Paleontólogo prominente con sede en el Museo Británico de Londres." },
+  { id: "Lubbock", label: "John Lubbock", campo: "Prehistoria/arqueología", ciudad: "Londres", lyell_vínculo: "Vínculo científico: Amigo y arqueólogo, comparte base en Londres." },
 
   // Red extendida
-  { id: "Argyll", label: "Duque de Argyll", campo: "Naturalista/política", ciudad: "Reino Unido" },
-  { id: "Bates", label: "Henry W. Bates", campo: "Biogeografía/entomología", ciudad: "Amazonia/Londres" },
-  { id: "Prestwich", label: "Joseph Prestwich", campo: "Geología", ciudad: "Reino Unido/Francia" },
-  { id: "Boucher", label: "Boucher de Perthes", campo: "Prehistoria", ciudad: "Abbeville" },
-  { id: "LartetE", label: "Edouard Lartet", campo: "Paleontología/prehistoria", ciudad: "Francia" },
-  { id: "LartetL", label: "Louis Lartet", campo: "Prehistoria", ciudad: "Francia" },
-  { id: "Jamieson", label: "T. F. Jamieson", campo: "Geología glacial", ciudad: "Escocia" },
-  { id: "Ramsay", label: "A. C. Ramsay", campo: "Geología glacial", ciudad: "Reino Unido" },
-  { id: "Beckles", label: "S. H. Beckles", campo: "Colector Purbeck", ciudad: "Sussex/Wight" },
-  { id: "Brodie", label: "W. R. Brodie", campo: "Colector Purbeck", ciudad: "Swanage" },
-  { id: "Brown_NS", label: "Richard Brown", campo: "Geología del carbón", ciudad: "Cape Breton (NS)" },
-  { id: "Binney", label: "E. W. Binney", campo: "Geología del carbón", ciudad: "Manchester" },
-  { id: "Bayfield", label: "H. W. Bayfield", campo: "Hidrografía", ciudad: "San Lorenzo/Canadá" },
-  { id: "Guiscardi", label: "G. Guiscardi", campo: "Vulcanología", ciudad: "Nápoles" },
-  { id: "Hartung", label: "Georg Hartung", campo: "Geología volcánica", ciudad: "Madeira/Tenerife" },
-  { id: "Keller", label: "Ferdinand Keller", campo: "Arqueología lacustre", ciudad: "Suiza" },
-  { id: "Aymard", label: "Auguste Aymard", campo: "Prehistoria", ciudad: "Francia (Velay)" },
-  { id: "Beck", label: "H. H. Beck", campo: "Conchología", ciudad: "Copenhague" },
-  { id: "Jeffreys", label: "J. G. Jeffreys", campo: "Malacología", ciudad: "Reino Unido" },
-  { id: "Beyrich", label: "H. E. Beyrich", campo: "Paleontología", ciudad: "Alemania" },
-  { id: "Binkhorst", label: "J. T. Binkhorst", campo: "Geología/prehistoria", ciudad: "Bélgica (Maas)" },
-  { id: "Bonney", label: "T. G. Bonney", campo: "Petrología/geomorf.", ciudad: "Reino Unido" },
-  { id: "Phillips", label: "John Phillips", campo: "Estratigrafía", ciudad: "Reino Unido" },
-  { id: "Peach", label: "C. W. Peach", campo: "Historia natural", ciudad: "Escocia" },
-  { id: "Judd", label: "John W. Judd", campo: "Petrología ígnea", ciudad: "Londres/Oban" },
-  { id: "Redfield", label: "W. C. Redfield", campo: "Meteorología", ciudad: "EE. UU." },
-  { id: "Somerville", label: "Mary Somerville", campo: "Ciencia/matemáticas", ciudad: "Italia/Londres" },
+  { id: "Argyll", label: "Duque de Argyll", campo: "Naturalista/política", ciudad: "Reino Unido", lyell_vínculo: "Vínculo social/científico: Naturalista y figura política con quien mantenía correspondencia." },
+  { id: "Bates", label: "Henry W. Bates", campo: "Biogeografía/entomología", ciudad: "Amazonia/Londres", lyell_vínculo: "Vínculo científico: Colega en biogeografía/entomología, comparte ciudad base." },
+  { id: "Prestwich", label: "Joseph Prestwich", campo: "Geología", ciudad: "Reino Unido/Francia", lyell_vínculo: "Vínculo científico fuerte: Comparten el campo de Geología. Prestwich validó los hallazgos paleolíticos que Lyell promovió." },
+  { id: "Boucher", label: "Boucher de Perthes", campo: "Prehistoria", ciudad: "Abbeville", lyell_vínculo: "Vínculo científico: Anticuario clave en la evidencia del Paleolítico; Lyell validó sus hallazgos." },
+  { id: "LartetE", label: "Edouard Lartet", campo: "Paleontología/prehistoria", ciudad: "Francia", lyell_vínculo: "Vínculo científico: Paleontólogo francés que Lyell contactó para investigar la fauna cuaternaria." },
+  { id: "LartetL", label: "Louis Lartet", campo: "Prehistoria", ciudad: "Francia", lyell_vínculo: "Vínculo científico: Colaborador francés de su padre, Edouard, con quien Lyell se carteaba." },
+  { id: "Jamieson", label: "T. F. Jamieson", campo: "Geología glacial", ciudad: "Escocia", lyell_vínculo: "Vínculo científico: Geólogo glacial clave en la discusión de Glen Roy." },
+  { id: "Ramsay", label: "A. C. Ramsay", campo: "Geología glacial", ciudad: "Reino Unido", lyell_vínculo: "Vínculo científico: Geólogo glacial y director del Geological Survey." },
+  { id: "Beckles", label: "S. H. Beckles", campo: "Colector Purbeck", ciudad: "Sussex/Wight", lyell_vínculo: "Vínculo científico: Colector de Purbeck, contribuyó con muestras importantes." },
+  { id: "Brodie", label: "W. R. Brodie", campo: "Colector Purbeck", ciudad: "Swanage", lyell_vínculo: "Vínculo científico: Colector de Purbeck involucrado en la atribución de muestras." },
+  { id: "Brown_NS", label: "Richard Brown", campo: "Geología del carbón", ciudad: "Cape Breton (NS)", lyell_vínculo: "Vínculo científico: Geólogo del carbón, sus hallazgos en Joggins fueron de interés para Lyell." },
+  { id: "Binney", label: "E. W. Binney", campo: "Geología del carbón", ciudad: "Manchester", lyell_vínculo: "Vínculo científico: Geólogo del carbón que estudió flora." },
+  { id: "Bayfield", label: "H. W. Bayfield", campo: "Hidrografía", ciudad: "San Lorenzo/Canadá", lyell_vínculo: "Vínculo científico: Hidrógrafo canadiense que informó a Lyell sobre fenómenos glaciares en San Lorenzo." },
+  { id: "Guiscardi", label: "G. Guiscardi", campo: "Vulcanología", ciudad: "Nápoles", lyell_vínculo: "Vínculo científico: Vulcanólogo que reportó a Lyell sobre el Vesubio." },
+  { id: "Hartung", label: "Georg Hartung", campo: "Geología volcánica", ciudad: "Madeira/Tenerife", lyell_vínculo: "Vínculo científico: Geólogo que Lyell contactó sobre vulcanismo en las Islas Canarias/Madeira." },
+  { id: "Keller", label: "Ferdinand Keller", campo: "Arqueología lacustre", ciudad: "Suiza", lyell_vínculo: "Vínculo científico: Arqueólogo suizo clave en los descubrimientos lacustres." },
+  { id: "Aymard", label: "Auguste Aymard", campo: "Prehistoria", ciudad: "Francia (Velay)", lyell_vínculo: "Vínculo científico: Prehistoriador francés, con quien Lyell mantenía correspondencia." },
+  { id: "Beck", label: "H. H. Beck", campo: "Conchología", ciudad: "Copenhague", lyell_vínculo: "Vínculo científico: Conchólogo, Lyell se carteaba con él sobre zonación malacológica." },
+  { id: "Jeffreys", label: "J. G. Jeffreys", campo: "Malacología", ciudad: "Reino Unido", lyell_vínculo: "Vínculo científico: Malacólogo con quien Lyell colaboraba para listas y determinaciones." },
+  { id: "Beyrich", label: "H. E. Beyrich", campo: "Paleontología", ciudad: "Alemania", lyell_vínculo: "Vínculo científico: Paleontólogo alemán, Lyell se carteaba con él sobre estratigrafía." },
+  { id: "Binkhorst", label: "J. T. Binkhorst", campo: "Geología/prehistoria", ciudad: "Bélgica (Maas)", lyell_vínculo: "Vínculo científico: Geólogo de Bélgica con quien Lyell mantenía correspondencia." },
+  { id: "Bonney", label: "T. G. Bonney", campo: "Petrología/geomorf.", ciudad: "Reino Unido", lyell_vínculo: "Vínculo científico: Geólogo y petrólogo británico con quien Lyell se carteaba." },
+  { id: "Phillips", label: "John Phillips", campo: "Estratigrafía", ciudad: "Reino Unido", lyell_vínculo: "Vínculo científico: Geólogo conocido por la correlación estratigráfica en Gran Bretaña." },
+  { id: "Peach", label: "C. W. Peach", campo: "Historia natural", ciudad: "Escocia", lyell_vínculo: "Vínculo científico: Naturalista, Lyell se carteaba con él sobre historia natural." },
+  { id: "Judd", label: "John W. Judd", campo: "Petrología ígnea", ciudad: "Londres/Oban", lyell_vínculo: "Vínculo científico: Geólogo ígneo, comparte base en Londres." },
+  { id: "Redfield", label: "W. C. Redfield", campo: "Meteorología", ciudad: "EE. UU.", lyell_vínculo: "Vínculo científico: Meteorólogo estadounidense, Lyell se carteaba con él sobre fenómenos climáticos." },
+  { id: "Somerville", label: "Mary Somerville", campo: "Ciencia/matemáticas", ciudad: "Italia/Londres", lyell_vínculo: "Vínculo social/científico: Científica y escritora influyente, comparte base en Londres." },
 
-  // Instituciones
+  // Instituciones y Temas
   { id: "BMNH", label: "British Museum (Natural History)", campo: "Museo", ciudad: "Londres" },
   { id: "Kew", label: "Royal Botanic Gardens, Kew", campo: "Botánica", ciudad: "Londres" },
   { id: "UoE_Lyell", label: "Sir Charles Lyell Collection (UoE)", campo: "Archivo/ciencia", ciudad: "Edimburgo" },
-
-  // Temas/teorías (hubs)
   { id: "SelNatural", label: "Teoría de la selección natural", tipo: "tema" },
   { id: "Mimetismo", label: "Mimetismo biológico", tipo: "tema" },
   { id: "Paleolitico", label: "Paleolítico europeo (Somme, Engis, Neanderthal)", tipo: "tema" },
@@ -66,9 +65,9 @@ const NODES = [
   { id: "BotanicaFosil", label: "Paleobotánica y paleoclima", tipo: "tema" }
 ];
 
-// ----- Aristas -----
+// ----- Aristas (Permanece igual) -----
 const EDGES = [
-  // Correspondencia con Lyell (personas → Lyell)
+  // ... (aristas para el grafo)
   { source: "MaryLyell", target: "Lyell", tipo: "correspondencia-familiar" },
   { source: "CarolineLyell", target: "Lyell", tipo: "correspondencia-familiar" },
   { source: "LeonardHorner", target: "Lyell", tipo: "correspondencia" },
@@ -106,8 +105,6 @@ const EDGES = [
   { source: "Judd", target: "Lyell", tipo: "correspondencia" },
   { source: "Redfield", target: "Lyell", tipo: "correspondencia" },
   { source: "Somerville", target: "Lyell", tipo: "correspondencia" },
-
-  // Persona → tema (palabras clave/hubs)
   { source: "Darwin", target: "SelNatural", tipo: "teoría" },
   { source: "Wallace", target: "SelNatural", tipo: "teoría" },
   { source: "Lyell", target: "SelNatural", tipo: "debate-recepción" },
@@ -135,8 +132,6 @@ const EDGES = [
   { source: "Binney", target: "Carbonifero", tipo: "Calamites/flora" },
   { source: "Hooker", target: "BotanicaFosil", tipo: "biogeografía/cronologías" },
   { source: "LeonardHorner", target: "NileMud", tipo: "cronologías (Nilo)" },
-
-  // Vínculos con instituciones/archivo
   { source: "Owen", target: "BMNH", tipo: "institución" },
   { source: "Hooker", target: "Kew", tipo: "institución" },
   { source: "Lyell", target: "UoE_Lyell", tipo: "archivo" },
@@ -144,7 +139,8 @@ const EDGES = [
 ];
 
 
-// ----- Nodos extra: ciudades y campos (Necesarios para el cálculo de shared attributes) -----
+// ----- D3.js y Lógica de Grafo (Necesario para búsquedas de nodos) -----
+
 const extraNodes = [];
 const extraEdges = [];
 NODES.forEach(n=>{
@@ -158,10 +154,10 @@ NODES.forEach(n=>{
 const nodes = NODES.map(n=>({...n,type: n.tipo ? n.tipo : 'person'})).concat(extraNodes);
 const links = EDGES.concat(extraEdges);
 
-// ----- SVG y fuerza (Necesario para la función nodeMeta/findEdge) -----
+// Variables y setup de D3
 const svg = d3.select('#graph');
-const width = svg.node().clientWidth;
-const height = svg.node().clientHeight;
+const width = svg.node().clientWidth || 600; 
+const height = svg.node().clientHeight || 400;
 
 const g = svg.append('g');
 
@@ -174,7 +170,7 @@ const simulation = d3.forceSimulation(nodes)
 // Zoom
 svg.call(d3.zoom().scaleExtent([0.3, 3]).on('zoom', (event)=> g.attr('transform', event.transform)));
 
-// ----- Aristas (Líneas rectas) -----
+// Aristas (Líneas rectas)
 const link = g.selectAll('line')
   .data(links)
   .join('line')
@@ -182,7 +178,7 @@ const link = g.selectAll('line')
   .attr('stroke-opacity', 0.6)
   .attr('stroke-width', 1.5);
 
-// ----- Nodos -----
+// Nodos
 const nodeGroup = g.selectAll('g.node')
   .data(nodes)
   .join('g')
@@ -213,7 +209,7 @@ nodeGroup.append('text')
   .attr('dy',4)
   .text(d=>d.label);
 
-// ----- Actualizar posiciones -----
+// Actualizar posiciones
 simulation.on('tick', ()=>{
   link.attr('x1', d => d.source.x)
       .attr('y1', d => d.source.y)
@@ -224,27 +220,25 @@ simulation.on('tick', ()=>{
 });
 
 // **********************************************
-// ********** MODIFICACIONES DEL CHAT ***********
+// ********** LÓGICA DEL CHAT MODIFICADA **********
 // **********************************************
 
 // Referencias de control actualizadas
 const selectB = document.getElementById('nodeB');
 const chatLog = document.getElementById('chatLog');
-const fixedNodeA = document.getElementById('fixedNodeA');
 
 // Lyell es el nodo fijo A
 const LYELL_ID = "Lyell"; 
 
-// FUNCIÓN DE BÚSQUEDA DE METADATOS (sin cambios, necesaria)
+// FUNCIÓN DE BÚSQUEDA DE METADATOS (sin cambios)
 function nodeMeta(id){ return nodes.find(n=>n.id===id); }
 function findEdge(a,b){ return EDGES.find(e=>(e.source===a&&e.target===b)||(e.source===b&&e.target===a)); }
 
-// FUNCIÓN MODIFICADA: Ahora filtra solo personas y excluye a Lyell, llenando solo selectB.
+// FUNCIÓN MODIFICADA: Llenar el selector B
 function populateSelects(){
-    // Solo llenamos selectB
     selectB.innerHTML='<option value="">Selecciona colega...</option>';
     
-    // 1. Filtrar solo personas (asumimos que 'person' es el tipo por defecto si no es 'tema'/'city'/'field')
+    // Filtrar solo personas y excluir a Lyell
     const peopleNodes = NODES.filter(n => n.id !== LYELL_ID && !n.tipo);
 
     peopleNodes
@@ -258,7 +252,7 @@ function populateSelects(){
 }
 populateSelects();
 
-// El click handler del grafo se elimina o se ajusta para solo actualizar selectB
+// El click handler del grafo se ajusta para solo actualizar selectB
 nodeGroup.on('click',(event,d)=>{
     if(d.type!=='person' || d.id === LYELL_ID) return;
     selectB.value=d.id;
@@ -269,14 +263,11 @@ function findSecondaryLinks(nodeId) {
     const secondaryLinks = EDGES.filter(e => e.source === nodeId || e.target === nodeId)
         .map(e => e.source === nodeId ? e.target : e.source)
         .filter(id => {
-            // Filtramos para incluir solo Nodos Temáticos (tipo) o Instituciones (ids fijos)
             const meta = nodeMeta(id);
+            // Incluir Nodos Temáticos (tipo) o Instituciones (ids fijos)
             return meta && (meta.tipo || ['BMNH', 'Kew', 'UoE_Lyell'].includes(id));
         })
-        .map(id => {
-            const meta = nodeMeta(id);
-            return meta.label; // Solo el nombre, sin el tipo para simplificar
-        });
+        .map(id => nodeMeta(id).label);
     return secondaryLinks;
 }
 
@@ -288,44 +279,31 @@ function explainConnection(a, b) {
 
     if (!A || !B) return 'Nodo no válido.';
 
-    const edge = findEdge(a, b);
-    let relationType = '';
-    let explanation = '';
+    // 1. Obtener la explicación detallada
+    const specificExplanation = B.lyell_vínculo || 'La relación se basa únicamente en intereses o ubicaciones compartidas.';
+    
 
-    // Obtener la ciudad del colega (B)
-    const B_ciudad = B.ciudad || 'Ciudad no definida';
-
-    // 1. Vínculo Directo e Indirecto con Lyell
-    if (edge) {
-        relationType = `Vínculo Directo (${edge.tipo})`;
-        explanation = `El vínculo principal es la ${edge.tipo}.`;
-    } else {
-        const aNeigh = EDGES.filter(e => e.source === a || e.target === a).map(e => e.source === a ? e.target : e.source);
-        const bNeigh = EDGES.filter(e => e.source === b || e.target === b).map(e => e.source === b ? e.target : e.source);
-        const inter = aNeigh.find(n => bNeigh.includes(n));
-        
-        if (inter) {
-            relationType = `Vínculo Indirecto`;
-            explanation = `Se relacionan a través de ${nodeMeta(inter).label}.`;
-        } else {
-            relationType = 'No hay vínculo directo conocido en estos datos.';
-            explanation = 'La relación se basa únicamente en intereses o ubicaciones compartidas.';
-        }
-    }
-
-    // 2. Atributos Comunes
+    // 2. Atributos Comunes (Campo/Ciudad)
     let locationText = '';
     const lyellCity = A.ciudad || '';
+    const B_ciudad = B.ciudad || 'Ciudad no definida';
     const sharedCity = lyellCity.includes(B_ciudad) || B_ciudad.includes(lyellCity);
+    const hasCommonField = A.campo === B.campo && A.campo;
 
-    if (A.campo === B.campo && A.campo) {
+    if (hasCommonField) {
         locationText += `Comparten el campo de estudio: **${A.campo}** (campo).`;
     }
     if (sharedCity) {
         if (locationText) locationText += '\n'; 
         locationText += `Ambos estaban situados en: **${B_ciudad}** (ciudad).`;
     } else if (B_ciudad !== 'Ciudad no definida') {
+        // Mostrar solo la ubicación del colega si no es compartida
         locationText = `El colega ${B.label} estaba situado en: **${B_ciudad}** (ciudad).`;
+    }
+    
+    // Si no hay campo ni ciudad compartida, buscamos una conexión genérica.
+    if (!locationText) {
+        locationText = 'No se encuentran atributos de ubicación o campo compartidos.';
     }
 
 
@@ -334,23 +312,22 @@ function explainConnection(a, b) {
     let secondaryText = '';
     if (secondaryLinks.length > 0) {
         secondaryText = `Están directamente relacionados con: **${secondaryLinks.join('**, **')}** (temas/instituciones).`;
+    } else {
+        secondaryText = `No está directamente relacionado con otros temas o instituciones en esta red.`;
     }
 
     // CONSTRUCCIÓN DEL FORMATO SOLICITADO
     let response = `Relación de Charles Lyell con ${B.label}\n\n`;
     
     // 1. Ciudad/Campo
-    response += `- ${locationText || 'No se encuentran atributos de ubicación o campo compartidos.'}\n`;
+    response += `- ${locationText}\n`;
     
-    // 2. Vínculo/Explicación
-    response += `- Vínculo: ${relationType}. ${explanation}\n`;
+    // 2. Vínculo/Explicación (Usando la descripción detallada del nodo B)
+    // *** MODIFICADO PARA USAR SOLO specificExplanation Y AÑADIR EL SUFIJO LITERAL ***
+    response += `- Vínculo: ${specificExplanation}${(B.lyell_vínculo) ? ' (explicación del vínculo)' : ''}\n`;
     
-    // 3. Temas/Instituciones (Si existen)
-    if (secondaryText) {
-        response += `- ${secondaryText}\n`;
-    } else {
-        response += `- No está directamente relacionado con otros temas o instituciones en esta red.\n`;
-    }
+    // 3. Temas/Instituciones
+    response += `- ${secondaryText}\n`;
 
     return response;
 }
