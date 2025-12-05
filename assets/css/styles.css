@@ -124,7 +124,7 @@ body {
 .intro-content { max-width: 1000px; }
 .intro-content h1 {
   font-family: 'Arial', sans-serif;
-  font-size: 1.3em;
+  font-size: 1.2em;
   font-weight: bold;
   line-height: 1.6;
 }
@@ -134,8 +134,8 @@ body {
     /* Esencial: centra el bloque dentro de su contenedor */
     margin: 50px auto; 
     /* Opcional: define un ancho máximo para que no sea gigante */
-    width: 50%; 
-    height: 50%;
+    width: 30%; 
+    height: 30%;
 }
 
 /* ============= Sección 4 (experimenta) ============= */
