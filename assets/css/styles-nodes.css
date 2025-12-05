@@ -1,19 +1,19 @@
 body {
-  margin: 0;
-  font-family: 'Inter', sans-serif;
-  background: #0f1220;
-  color: #e9ecf1;
-  height: 100vh;
-  display: grid;
-  grid-template-rows: auto 1fr;
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: #0f1220;
+  color: #e9ecf1;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr;
 }
 
 header { padding: 10px; border-bottom: 1px solid #232743; }
 
 main {
-  display: grid;
-  grid-template-columns: 60% 40%;
-  height: 100%;
+  display: grid;
+  grid-template-columns: 60% 40%;
+  height: 100%;
 }
 
 #left { border-right: 1px solid #232743; position: relative; }
@@ -26,33 +26,38 @@ main {
 select, input { padding: 6px; border-radius: 6px; border: 1px solid #22294a; background: #101632; color: #e9ecf1; }
 button { padding: 6px 10px; background: #c2864d; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; }
 
-#chatLog { 
-  overflow-y: auto;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  border-top: 1px solid #232743;
-  padding-top: 6px;
+#chatLog { 
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  border-top: 1px solid #232743;
+  padding-top: 6px;
+    /* Asegura que el contenido nunca obligue al contenedor a desbordarse horizontalmente */
+    overflow-x: hidden; 
 }
 
 .msg {
-  background: #0f1326;
-  border: 1px solid #22294a;
-  padding: 8px;
-  border-radius: 8px;
-  font-size: 13px;
+  background: #0f1326;
+  border: 1px solid #22294a;
+  padding: 8px;
+  border-radius: 8px;
+  font-size: 13px;
+    /* --- AJUSTES CLAVE PARA EL WRAP --- */
+    white-space: normal; /* Asegura que el texto fluya y se ajuste */
+    word-break: break-word; /* Rompe palabras largas que excedan el ancho */
+    /* --------------------------------- */
 }
 
 .user {
-  background: #152042;
-  align-self: flex-end;
+  background: #152042;
+  align-self: flex-end;
 }
 
 .node-label {
-  font-size: 12px;
-  fill: #e9ecf1;
-  pointer-events: none;
-  text-anchor: middle;
-  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  fill: #e9ecf1;
+  pointer-events: none;
+  text-anchor: middle;
+  font-family: 'Inter', sans-serif;
 }
-
