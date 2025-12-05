@@ -384,5 +384,3 @@ document.getElementById('clear').addEventListener('click',()=>{
   chatLog.innerHTML='';
   appendMsg('Selecciona un colega y pulsa "Preguntar Relación" para ver el vínculo con Charles Lyell.');
 });
-
-
