@@ -134,8 +134,8 @@ body {
     /* Esencial: centra el bloque dentro de su contenedor */
     margin: 50px auto; 
     /* Opcional: define un ancho máximo para que no sea gigante */
-    width: 60%; 
-    height: 60%;
+    width: 55%; 
+    height: 55%;
 }
 
 /* ============= Sección 4 (experimenta) ============= */
