@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Red avanzada de científicos XIX</title>
+    <title>Charles Lyell correspondance network </title>
     <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/raulgomhern/charleslyellnodecloud/refs/heads/main/assets/img/fossil.png">
     <link rel="stylesheet" href=".././css/styles-nodes.css">
     <script src="https://d3js.org/d3.v7.min.js"></script>
 </head>
 <body>
     <header>
-        <h1>Red de Conexiones de Lyell</h1>
+        <h1>Charles Lyell correspondance network</h1>
     </header>
 
     <main>
@@ -21,23 +21,23 @@
         <section id="right">
             <form id="chatForm">
                 <div class="row">
-                    <label for="nodeA_fixed">Relación de </label>
+                    <label for="nodeA_fixed">Relationship of </label>
                     <span id="fixedNodeA" class="fixed-label">Charles Lyell</span>
                 </div>
 
                 <div class="row">
-                    <label for="nodeB">Con: </label>
+                    <label for="nodeB">With: </label>
                     <select id="nodeB" required></select>
                 </div>
                 
                 <div class="row">
-                    <button type="submit">Preguntar Relación</button>
-                    <button type="button" id="clear">Limpiar conversación</button>
+                    <button type="submit">Ask the network </button>
+                    <button type="button" id="clear">Clean conversation</button>
                 </div>
             </form>
 
             <div id="chatLog">
-                <div class="msg">Selecciona una persona y pulsa "Preguntar Relación" para ver el vínculo con Charles Lyell.</div>
+                <div class="msg">Select a person and click on "Ask the network" to see the relationship with Charles Lyell.</div>
             </div>
         </section>
     </main>
