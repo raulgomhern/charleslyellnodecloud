@@ -128,6 +128,15 @@ body {
   font-weight: bold;
   line-height: 1.6;
 }
+#uoe-logo {
+    /* Esencial: la imagen debe comportarse como un bloque */
+    display: block; 
+    /* Esencial: centra el bloque dentro de su contenedor */
+    margin: 20px auto; 
+    /* Opcional: define un ancho máximo para que no sea gigante */
+    max-width: 180px; 
+    height: auto;
+}
 
 /* ============= Sección 4 (experimenta) ============= */
 .experiment-section {
@@ -229,4 +238,6 @@ body {
   .site-logo { top: 12px; right: 12px; }
   .site-logo img { height: 40px; }
 }
+
+
 
