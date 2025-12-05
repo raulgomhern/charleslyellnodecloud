@@ -49,9 +49,6 @@ const NODES = [
   { id: "Somerville", label: "Mary Somerville", field: "Science/Mathematics", city: "Italy/London", lyell_link: "Social/scientific bond: Influential scientist and writer, sharing a base in London." },
 
   // Institutions and Topics (hubs)
-  { id: "BMNH", label: "British Museum (Natural History)", field: "Museum", city: "London" },
-  { id: "Kew", label: "Royal Botanic Gardens, Kew", field: "Botany", city: "London" },
-  { id: "UoE_Lyell", label: "Sir Charles Lyell Collection (UoE)", field: "Archive/Science", city: "Edinburgh" },
   { id: "SelNatural", label: "Theory of Natural Selection", type: "topic" },
   { id: "Mimetismo", label: "Biological Mimicry", type: "topic" },
   { id: "Paleolitico", label: "European Paleolithic (Somme, Engis, Neanderthal)", type: "topic" },
